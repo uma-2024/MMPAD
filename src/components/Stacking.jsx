@@ -13,8 +13,9 @@ import { useWeb3Modal } from '@web3modal/wagmi/react';
 const Stacking = () => {
     const { address } = useAccount();
     const { open, close } = useWeb3Modal()
-    const MMT_TOKEN_ADDRESS = import.meta.env.VITE_MMT_TOKEN_ADDRESS;
-    const STAKING_TOKEN_ADDRESS = import.meta.env.VITE_STAKING_CONTRACT_ADDRESS;
+    
+    const MMT_TOKEN_ADDRESS = "0x714aEb9Ec400AE05e039C7Fd9Fc9548A058352A3";
+    const STAKING_TOKEN_ADDRESS = "0x81315Eda6552b7507fa8486015Aa65b5a65595d6";
     const [allowance, setAllowance] = useState(0);
     const [inputValues, setInputValues] = useState(['', '', '']);
     const [tnxHash, setTnxHash] = useState("")

@@ -34,7 +34,7 @@ import "./App.css";
 function App() {
   return (
     <Routes>
-      <Route
+      {/* <Route
         exact
         path="/"
         element={
@@ -56,9 +56,9 @@ function App() {
             </WagmiConfig>
           </React.Fragment>
         }
-      />
+      /> */}
       <Route
-        path="/staking"
+        path="/"
         element={
           <WagmiConfig config={wagmiConfig}>
             <Staking /> {/* Add the Staking route */}
