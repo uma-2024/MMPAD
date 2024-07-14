@@ -1,0 +1,252 @@
+.stacking{
+    padding: 40px 120px;
+    background-color: #262626;
+    color: #B2B2B2;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    text-align: center;
+}
+.stacking h2{
+    color: #FFF;
+font-family: Lora;
+font-size: 40px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 3px;
+margin: 0px;
+}
+.stacking h2 span{
+    background: linear-gradient(86deg, rgba(255, 50, 50, 0.86) -4.79%, rgba(255, 167, 35, 0.88) 28.82%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.stack-card{
+    width: 100%;
+    border-radius: 22px;
+border: 1px solid rgba(255, 50, 50, 0.86);
+background: #333;
+display: flex;
+}
+.stack-card01{
+width: 20%;
+background: linear-gradient(87deg, rgba(255, 50, 50, 0.86) -4.98%, rgba(255, 167, 35, 0.88) 91.73%), #D9D9D9;
+border-radius:22px 0px 0px 22px ;
+color: #FFF;
+padding: 24px 48px;
+}
+.stack-card01 h5{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: #E1E1E1;
+font-family: Lora;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 1px;
+}
+.stack-card01 h1{
+margin-top: 0px;
+margin-bottom: 0px;
+font-family: Lora;
+font-size: 36px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 1px;
+}
+.right-card{
+    border-radius:0px 22px 22px 0px ;
+}
+.stack-card02{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 44px;
+    row-gap: 10px;
+}
+.stack-card02 div {
+    display: flex;
+    justify-content: space-between;
+}
+.stack-card-details{
+    display: flex;
+    flex-direction: column;
+}
+.stack-card-details button{
+   background-color: #525252;
+   border-radius: 22.68px;
+   display: flex;
+padding: 12px 32px;
+justify-content: center;
+align-items: center;
+gap: 9.45px;
+color: #D8D8D8;
+text-align: center;
+font-family: Rubik;
+font-size: 17.01px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 2.835px;
+text-transform: uppercase;
+border: none;
+}
+ .stack-card p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #B2B2B2;
+font-family: Rubik;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 1px;
+ }
+
+ .stack-card-3{
+    display: flex;
+    flex-direction: column;
+ }
+
+ .stack-card-3 h5{
+    background: linear-gradient(86deg, rgba(255, 50, 50, 0.86) -4.79%, rgba(255, 167, 35, 0.88) 28.82%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-family: Rubik;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 1px;
+text-align: left;
+margin-bottom: 10px;
+margin-top: 0px;
+ }
+ .stack-card-details p:nth-of-type(2){
+    color: #FFF;
+font-family: Rubik;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 1px;
+ }
+
+.progress-bar-container {
+    background-color: #555;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 15px;
+  }
+  
+.progress-bar {
+    background: linear-gradient(87deg, rgba(255, 50, 50, 0.86) -4.98%, rgba(255, 167, 35, 0.88) 91.73%), #D9D9D9;;
+    height: 100%;
+  }
+  .stack-card02 span{
+    text-align: left;
+    font-size: 14px;
+  }
+.mobile-button{
+    display: none;
+}
+.stack-card svg {
+    width: auto;
+}
+  @media (max-width: 768px){
+    .stacking{
+        padding: 24px 50px;
+        gap: 16px;
+    }
+    .stack-card {
+        height: 100%;
+        flex-direction: column;
+    }
+    .stack-card01 {
+        box-sizing: border-box;
+        width: 100%;
+        border-radius: 22px 22px 0px 0px;
+        display: flex;
+        flex-direction: row;
+        padding: 13px 16px;
+        justify-content: space-between;
+    }
+    .stack-card svg{
+        width:auto;
+    }
+    .card22{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .stack-card02{
+        padding: 16px;
+        width: 100%;
+    }
+    .stack-card p {
+        font-size: 11px;
+    }
+    .stack-card-details p:nth-of-type(2) {
+        font-size: 14px;
+    }
+    .stack-card-3 div span:nth-of-type(2),.stack-card-3 div span:nth-of-type(3){
+        display: none;
+    }
+    .stacking h2 {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+    .stack-card01 img{
+        width: 60px;
+        height: 60px;
+    }
+    .stack-card01 h1 {
+        font-size: 24px;
+    }
+.mobile-button{
+    background-color: #525252;
+    border-radius: 22px;
+    display: flex;
+ width: 189px;
+   padding: 10px 26px;;
+ justify-content: center;
+ align-items: center;
+ gap: 8px;
+ color: #D8D8D8;
+ text-align: center;
+ font-family: Rubik;
+ font-size:14px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: normal;
+ letter-spacing: 2.835px;
+ text-transform: uppercase;
+ border: none;
+ margin-top: 24px;
+ align-self: center;
+
+}
+.stack-card02 .stack-card-details:nth-of-type(3){
+display: none;
+}
+.stack-card02 span{
+    font-size: 10px;
+  }
+  .stack-card-3 h5 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  .stack-card01 h5 {
+    font-size: 18px;
+  }
+}
+  @media (max-width: 1356px){
+    .stack-card01 {
+        padding: 16px;
+    }
+  }
+ 

@@ -1,0 +1,74 @@
+.Button-card {
+  position: relative; 
+  padding: 10px 20px; 
+  border: none; 
+  background-color: #A13333; 
+  color: white; 
+  cursor: pointer; 
+  font-size: 18px; 
+  border-radius: 5px; 
+  overflow: hidden; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border-radius: 22px;
+  background: #333;
+}
+
+.button-image {
+  margin-right: 10px; 
+  width: 20px;
+  height: 20px;
+}
+
+.Button-card:hover::after, .Button-card:hover::before {
+  width: 70px;
+  height: 70px;
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  transition: 0.5s linear;
+  background: linear-gradient(87deg, rgba(255, 50, 50, 0.86) -4.98%, rgba(255, 167, 35, 0.88) 91.73%), #A13333;
+  filter: blur(35px);
+  z-index: 1;
+}
+
+.Button-card:hover::after {
+  top: 0;
+  left: 0;
+  animation: rotateFirst 5s linear infinite;
+}
+
+.Button-card:hover::before {
+  bottom: 0;
+  right: 0;
+  animation: rotateSecond 5s linear infinite;
+}
+
+.Button-card:hover {
+  box-shadow: 0px 0px 10px rgba(255, 50, 50, 0.86);
+}
+
+@keyframes rotateFirst {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(70px, 70px) rotate(180deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes rotateSecond {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-70px, -70px) rotate(-180deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(-360deg);
+  }
+}

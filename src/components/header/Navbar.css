@@ -1,0 +1,142 @@
+.navbar1 {
+    margin: 0;
+    padding: 0;
+    background-color: #060606;
+    padding-left: 120px;
+    padding-right: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar1 h1 {
+    font-family: Lora;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(87deg, rgba(255, 50, 50, 0.86) -4.98%, rgba(255, 167, 35, 0.88) 91.73%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.navbar1 span {
+    color: #F9F9F9;
+    font-family: Rubik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-right: 39px;
+}
+
+.navbar-span {
+    margin-left: 80px;
+}
+
+.navbar-span span a {
+    text-decoration: none;
+    color: #F9F9F9;
+    font-family: Rubik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-right: 39px;
+}
+
+.connect-btn {
+    border-radius: 22px;
+    background: #333;
+    display: flex;
+    padding: 11px 31px;
+    justify-content: center;
+    align-items: center;
+}
+
+.connect-btn img {
+    vertical-align: top;
+    margin-right: 10px;
+}
+
+.connect-btn span {
+    margin-right: 0;
+    color: #D8D8D8;
+    text-align: center;
+    font-family: Rubik;
+    font-size: 17.01px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 2.835px;
+    text-transform: uppercase;
+}
+
+.hamburger-icon {
+    display: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 25px;
+    margin-top: 7px;
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    height: 800px;
+    background-color: black;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    top: 50px;
+    left: 0px;
+    width: 100%;
+}
+
+.hide-options {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navbar1 {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .navbar1 h1 {
+        font-size: 30px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .navbar-span {
+        display: none;
+    }
+
+    .connect-btn {
+        display: none;
+    }
+
+    .hamburger-icon {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: flex;
+        text-align: center;
+        z-index: 1;
+        padding-top: 40px;
+    }
+    .mobile-menu  span a{
+        color: #fff;
+        text-decoration: none;
+    }
+}

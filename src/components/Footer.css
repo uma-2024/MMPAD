@@ -1,0 +1,215 @@
+.footer{
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #0F0F0F;
+    text-align: left;
+}
+.footer-container{
+    padding-top: 96px;
+    padding-bottom: 9px;
+    height: 400px;
+    color: white;
+    display: flex;
+}
+
+.footer-container h4{
+    background: linear-gradient(87deg, rgba(255, 50, 50, 0.86) -4.98%, rgba(255, 167, 35, 0.88) 91.73%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Lora;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 24px;
+}
+.footer-card1 input{
+    width: 295px;
+height: 50px;
+padding: 0px;
+color: #B1B5BB;
+}
+.footer-card1 .input-button{
+    display: flex;
+width: 436px;
+height: 50px;
+align-items: center;
+gap: 16px;
+flex-shrink: 0;
+}
+.footer-card1 button{
+    background: linear-gradient(87deg, rgba(255, 50, 50, 0.86) -4.98%, rgba(255, 167, 35, 0.88) 91.73%);
+    display: flex;
+    padding: 5px 26px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    color: white;
+    border: none;
+}
+.footer-card1{
+    width:30%;
+    margin-right: 84px;
+}
+.footer-card2{
+width: 30%;
+margin-right: 62px;
+}
+
+
+.footer-card-01{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-card-02{
+    display: flex;
+    flex-direction: column;
+    margin-right: 120px;
+}
+
+.footer-card-03{
+    display: flex;
+    flex-direction: column;
+    width: 384px;
+}
+
+.footer-card-02 span{
+    width: 87px;
+    margin-bottom: 16px;
+    color: #FFF;
+font-family: Roboto;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.footer-card-03 span{
+    margin-bottom: 16px;
+    color: #FFF;
+font-family: Roboto;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.footer-card-01 h5{
+   background: linear-gradient(87deg, rgba(255, 50, 50, 0.86) -4.98%, rgba(255, 167, 35, 0.88) 91.73%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 32px;
+    font-family: Roboto;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.footer-card p{color: #FFF;
+    width: 320px;
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 34px;
+}
+
+.footer-all-icon{
+    display: flex;
+    width: 320px;
+    justify-content: space-between;
+    padding-top: 56px;
+}
+
+.address-div1, .address-div2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    border-top: 1px solid grey;
+    color: #FFF;
+}
+
+.address-div1 h4{
+    text-align: center;
+font-family: Lora;
+font-size: 28px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 3px;
+background: linear-gradient(87deg, rgba(255, 50, 50, 0.86) -4.98%, rgba(255, 167, 35, 0.88) 91.73%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+
+.policy{
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+@media (max-width: 768px) {
+    .footer{
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .footer-container{
+        display: flex;
+        flex-direction: column;
+        padding-top: 24px;
+        height: 100%;
+    }
+    .footer-card1 .input-button {
+        width: 291px;
+        height: 34px;
+    }
+    .footer-card3 svg{
+        display: none;
+    }
+    .footer-card1{
+        width:80%;
+        margin-right: 0px;
+    }
+    .footer-card2 {
+        width: 80%;
+    }
+    .footer-all-icon {
+        padding-top: 24px;
+        padding-bottom: 40px;
+        justify-content: left;
+        gap: 20px;
+    }
+    .footer-container h4 {
+        margin-bottom: 15px;
+    }
+    .policy span:nth-of-type(3),
+.policy span:nth-of-type(4) {
+    display: none;
+}
+.address-div2 {
+    font-size: 10px;
+}
+.address-div1{
+    display: none;
+}
+.footer-card1 input {
+    height: 33px;
+}
+}
+@media (max-width: 1318px) {
+    .footer-card3 svg:nth-of-type(2){
+        display: none;
+    }
+}

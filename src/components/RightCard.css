@@ -1,0 +1,118 @@
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 95%;
+  }
+  
+  .container .glass {
+    position: relative;
+    width: 204px;
+    height: 400px;
+    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 10px;
+    margin: 0 -45px;
+    backdrop-filter: blur(10px);
+    transform: rotate(calc(var(--r) * 1deg));
+    z-index: 1;
+    border-radius: 20px;
+border: 2px solid rgba(255, 50, 50, 0.86);
+background: linear-gradient(87deg, rgba(255, 50, 50, 0.10) -4.98%, rgba(255, 167, 35, 0.11) 91.73%), #0F0F0F;
+display: flex;
+flex-direction: column;
+color: #fff;
+gap: 36px;
+  }
+  
+  .container .glass:nth-child(1) {
+    transform: rotate(-10deg); 
+    margin-right: -60px; 
+    z-index: 3; 
+  }
+  
+  .container .glass:nth-child(2) {
+    z-index: 2; 
+    transform: rotate(10deg) translateY(-20px); 
+    transform-origin: top; 
+  }
+  
+  .container .glass:nth-child(3) {
+    transform: rotate(20deg); 
+    margin-left: -60px; 
+    z-index: 1; 
+  }
+  
+  .container:hover .glass {
+    transform: rotate(0deg);
+    margin: 0 10px;
+    z-index: 1; 
+  }
+  .container .glass svg {
+    font-size: 2.5em;
+    fill: #fff;
+  }
+  .glass h1{
+    background: linear-gradient(86deg, rgba(255, 50, 50, 0.86) -4.79%, rgba(255, 167, 35, 0.88) 28.82%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+.glass span{
+  font-size: 18px;
+  color: orange;
+}
+.glass h5{
+  text-align: center;
+}
+  @media (max-width: 768px){
+    .container .glass {
+        margin: 0 0px; 
+        gap: 0;
+    }
+    .container .glass:nth-child(1) {
+        transform: rotate(0deg); 
+        margin-right: 0px; 
+        z-index: 0; 
+      }
+      .container .glass:nth-child(2) {
+        z-index: 0; 
+        transform: rotate(0deg) translateY(0px); 
+        transform-origin: top; 
+      }
+      .container .glass:nth-child(3) {
+        transform: rotate(0deg); 
+        margin-left: 0px; 
+        z-index: 0; 
+      }
+      .container .glass {
+height: 235px;
+      }
+      .container{
+        margin-top: 50px;
+        width: 100%;
+        display: flex;
+        gap: 16px;
+      }
+      .glass h1{
+        margin: 0px;
+        font-size: 26px;
+      }
+      .glass span {
+        font-size: 10px;
+      }
+      .glass h5 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 10px;
+      }
+      .glass h4{
+margin-top: 10px;
+margin-bottom: 10px;
+font-size: 10px;
+      }
+
+  }

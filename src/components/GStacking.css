@@ -1,0 +1,149 @@
+.gstacking{
+    background-color: #0F0F0F;
+    color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+padding-left: 120px;
+padding-right: 120px;
+padding-top: 147px;
+padding-bottom: 40px;
+text-align: left;
+}
+
+.g-left{
+    width: 40%;
+margin-right: 20px;
+}
+.g-left h1{
+    margin-top: 0px;
+    margin-bottom: 32px;
+    color: #FFF;
+font-family: Lora;
+font-size: 56px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 3px;
+}
+.g-left h1 span{
+    background: linear-gradient(86deg, rgba(255, 50, 50, 0.86) -4.79%, rgba(255, 167, 35, 0.88) 28.82%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.g-right{
+    width: 60%;
+    margin-left: 30px;
+}
+.g-left .detail-card{
+    display: flex;
+   gap: 30px;
+}
+.g-left .detail-card div{
+    display: flex;
+padding: 18px 18px;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+gap: 10px;
+border-radius: 7px;
+background: #F24330;
+}
+.detail-card2 div{
+display: flex;
+padding: 28px 18px;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+gap: 10px;
+border-radius: 7px;
+background: #F24330;
+}
+
+.g-left .detail-card div:hover{
+    box-shadow: -9px 7px 5px 0px rgba(255, 167, 35, 0.24), 1px 1px 21px 0px rgba(255, 167, 35, 0.88) inset;
+}
+.detail-card2{
+    display: none;
+}
+
+.g-left .secondp{
+    margin-bottom: 42px;
+    margin-top: 20px;
+}
+
+.g-left p{
+    color: #F9F9F9;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.18px;
+}
+.btn-know-more{
+display: none;
+}
+@media (max-width: 768px) {
+    .gstacking{
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 72px;
+        padding-bottom: 24px;
+        flex-direction: column;
+        text-align: center;
+    }
+    .g-left{
+        width: 100%;
+        margin-right: 0px;
+    }
+    .g-right{
+        width: 100%;
+        margin-left: 0px;
+    }
+    .g-left .detail-card {
+    gap: 15px;
+}
+.g-left h1 {
+    font-size: 26px;
+    margin-bottom: 24px;
+}
+.g-left .secondp{
+    display: none;
+}
+.g-left .detail-card{
+    display: none;
+}
+.detail-card2{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin-top: 40px;
+    display: flex;
+        justify-content: space-between;
+}
+.detail-card2 div{
+    padding: 14px 12px;
+}
+.btn-know-more{
+    background-color: #525252;
+    border-radius: 22px;
+    display: inline;
+ padding: 12px 32px;
+ color: #D8D8D8;
+ text-align: center;
+ font-family: Rubik;
+ font-size: 18px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: normal;
+ letter-spacing: 2.835px;
+ text-transform: uppercase;
+ border: none;
+ margin-top: 24px;
+}
+.detail-card2{
+    gap: 0px;
+}
+}
