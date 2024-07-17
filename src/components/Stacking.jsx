@@ -9,11 +9,12 @@ import { useAccount, useWaitForTransaction } from 'wagmi';
 import useWagmiWriteMethod from '../Hooks/wagmiWriteMethod';
 import LoadingModal from './Modal/LoadingModal';
 import { useWeb3Modal } from '@web3modal/wagmi/react';
+import axios from 'axios';
 
 const Stacking = () => {
     const { address } = useAccount();
     const { open, close } = useWeb3Modal()
-    
+
     const MMT_TOKEN_ADDRESS = "0x714aEb9Ec400AE05e039C7Fd9Fc9548A058352A3";
     const STAKING_TOKEN_ADDRESS = "0x81315Eda6552b7507fa8486015Aa65b5a65595d6";
     const [allowance, setAllowance] = useState(0);
@@ -27,7 +28,21 @@ const Stacking = () => {
     const { method: approveMethod, hash: approveTxHash } = useWagmiWriteMethod(tokenAbi, MMT_TOKEN_ADDRESS, "approve");
     const { method: stakeMethod, hash: stakeHash } = useWagmiWriteMethod(StakingContractAbi, "0x81315Eda6552b7507fa8486015Aa65b5a65595d6", "stake");
 
-
+    const [usdPrice, setUsdPrice] = useState(2.8146e-8);
+  
+    useEffect(() => {
+      const fetchCoinData = async () => {
+        try {
+          const response = await axios.get('https://api.coingecko.com/api/v3/coins/binance/contract/0x9767c8e438aa18f550208e6d1fdf5f43541cc2c8');
+          const usdPrice = response.data?.market_data?.current_price?.usd;
+          setUsdPrice(usdPrice);
+        } catch (error) {
+            console.log("error in fetching coin price");
+        }
+      };
+      fetchCoinData();
+    }, []);
+    console.log("usdPrice",usdPrice);
     const handleApprove = async (approveAmountValue) => {
         const txHash = await approveMethod([STAKING_TOKEN_ADDRESS, approveAmountValue]);
         setTnxHash(txHash)
@@ -71,7 +86,12 @@ const Stacking = () => {
 
             // Determine if we need to approve or stake
             const inputValue = parseFloat(value);
-
+            console.log("usdPrice",usdPrice);
+            if(usdPrice*inputValue<100)
+            {
+                alert(`Less amount not allowed, At least stake ${100/usdPrice}`)
+                return
+            }
             if (index === 0) {
                 if (allowance >= inputValue) {
                     // Call stake method
@@ -224,11 +244,11 @@ const Stacking = () => {
                             />
                         </div>
                         <div className='stack-card-details'>
-                        {
+                            {
                                 !address ? <button className="d-hero-g-btn" onClick={open}>{"Connect Wallet"}</button> :
-                            <button onClick={handleStack(1)} disabled={isButtonDisabled(1)} title={isButtonDisabled(1) && "Invalid input"}>
-                                {allowance >= parseFloat(inputValues[1]) ? 'Stake' : 'Approve'}
-                            </button>}
+                                    <button onClick={handleStack(1)} disabled={isButtonDisabled(1)} title={isButtonDisabled(1) && "Invalid input"}>
+                                        {allowance >= parseFloat(inputValues[1]) ? 'Stake' : 'Approve'}
+                                    </button>}
                         </div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="730" height="12" viewBox="0 0 830 12" fill="none">
@@ -279,12 +299,12 @@ const Stacking = () => {
                             />
                         </div>
                         <div className='stack-card-details'>
-                        {
+                            {
                                 !address ? <button className="d-hero-g-btn" onClick={open}>{"Connect Wallet"}</button> :
-                            <button onClick={handleStack(2)} disabled={isButtonDisabled(2)} title={isButtonDisabled(2) && "Invalid input"}>
-                                {allowance >= parseFloat(inputValues[2]) ? 'Stake' : 'Approve'}
-                            </button>
-}
+                                    <button onClick={handleStack(2)} disabled={isButtonDisabled(2)} title={isButtonDisabled(2) && "Invalid input"}>
+                                        {allowance >= parseFloat(inputValues[2]) ? 'Stake' : 'Approve'}
+                                    </button>
+                            }
                         </div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="730" height="12" viewBox="0 0 830 12" fill="none">
