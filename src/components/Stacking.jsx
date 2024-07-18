@@ -29,20 +29,20 @@ const Stacking = () => {
     const { method: stakeMethod, hash: stakeHash } = useWagmiWriteMethod(StakingContractAbi, "0x81315Eda6552b7507fa8486015Aa65b5a65595d6", "stake");
 
     const [usdPrice, setUsdPrice] = useState(2.8146e-8);
-  
+
     useEffect(() => {
-      const fetchCoinData = async () => {
-        try {
-          const response = await axios.get('https://api.coingecko.com/api/v3/coins/binance/contract/0x9767c8e438aa18f550208e6d1fdf5f43541cc2c8');
-          const usdPrice = response.data?.market_data?.current_price?.usd;
-          setUsdPrice(usdPrice);
-        } catch (error) {
-            console.log("error in fetching coin price");
-        }
-      };
-      fetchCoinData();
+        const fetchCoinData = async () => {
+            try {
+                const response = await axios.get('https://api.coingecko.com/api/v3/coins/binance/contract/0x9767c8e438aa18f550208e6d1fdf5f43541cc2c8');
+                const usdPrice = response.data?.market_data?.current_price?.usd;
+                setUsdPrice(usdPrice);
+            } catch (error) {
+                console.log("error in fetching coin price");
+            }
+        };
+        fetchCoinData();
     }, []);
-    console.log("usdPrice",usdPrice);
+    console.log("usdPrice", usdPrice);
     const handleApprove = async (approveAmountValue) => {
         const txHash = await approveMethod([STAKING_TOKEN_ADDRESS, approveAmountValue]);
         setTnxHash(txHash)
@@ -86,13 +86,12 @@ const Stacking = () => {
 
             // Determine if we need to approve or stake
             const inputValue = parseFloat(value);
-            console.log("usdPrice",usdPrice);
-            if(usdPrice*inputValue<100)
-            {
-                alert(`Less amount not allowed, At least stake ${100/usdPrice}`)
-                return
-            }
+            console.log("usdPrice", usdPrice);
             if (index === 0) {
+                if (usdPrice * inputValue < 100) {
+                    alert(`Less amount not allowed, At least stake ${100 / usdPrice}`)
+                    return
+                }
                 if (allowance >= inputValue) {
                     // Call stake method
                     console.log("Staking...");
@@ -106,6 +105,10 @@ const Stacking = () => {
                     // Replace with your approve logic
                 }
             } else if (index === 1) {
+                if (usdPrice * inputValue < 500) {
+                    alert(`Less amount not allowed, At least stake ${500 / usdPrice}`)
+                    return
+                }
                 if (allowance >= inputValue) {
                     // Call stake method
                     console.log("Staking...");
@@ -121,6 +124,10 @@ const Stacking = () => {
                     // Replace with your approve logic
                 }
             } else if (index === 2) {
+                if (usdPrice * inputValue < 1000) {
+                    alert(`Less amount not allowed, At least stake ${1000 / usdPrice}`)
+                    return
+                }
                 if (allowance >= inputValue) {
                     // Call stake method
                     console.log("Staking...");
@@ -139,17 +146,9 @@ const Stacking = () => {
         }
     };
 
-    const inlinecss = {
-        width: '100%',
-        padding: '10px',
-        margin: '10px 0',
-        boxSizing: 'border-box',
-        border: '2px solid #ccc',
-        borderRadius: '4px',
-        transition: '0.3s',
-        fontSize: '16px',
-        height: "40px"
-    };
+
+
+ 
 
     // Disable conditions for buttons based on input values
     const isButtonDisabled = (index) => {
@@ -157,18 +156,17 @@ const Stacking = () => {
 
         if (index === 0) {
             // Disable if input is empty or not less than 500
-            return !value || value >= 500;
+            return !value || value < 100/usdPrice;
         } else if (index === 1) {
             // Disable if input is empty, less than 500, or greater than or equal to 1000
-            return !value || value < 500 || value >= 1000;
+            return !value || value < 100/usdPrice || value >= 1000/usdPrice;
         } else if (index === 2) {
             // Disable if input is empty or less than 1000
-            return !value || value < 1000;
+            return !value || value < 1000/usdPrice;
         }
 
         return false;
     };
-
     return (
         <div className='stacking'>
             <h2><span>MMIT’s</span> Staking</h2>
@@ -190,12 +188,12 @@ const Stacking = () => {
                             <p>360 Days</p>
                         </div>
                         <div className='stack-card-details'>
-                            <input
+                        <input
                                 type='text'
                                 value={inputValues[0]}
                                 onChange={handleInputChange(0)}
-                                placeholder='< 500'
-                                style={inlinecss}
+                                placeholder={`>= ${100/usdPrice}`}
+                                title={`>= ${100/usdPrice}`}
                             />
                         </div>
                         <div className='stack-card-details'>
@@ -215,11 +213,29 @@ const Stacking = () => {
                         <div className="progress-bar" style={{ width: '100%' }}></div>
                     </div>
                     <div className='stack-card-3'>
-                        <h5>Reward Start</h5>
+
                         <div>
-                            <span>After 100 Days Of Stacking</span>
+                            <div className='Reward-start'>
+                                <h5>Reward Start</h5>
+                                <span>After 100 Days Of Stacking</span>
+                            </div>
+
+                            <div className='detail-card'>
+                                <div><span>Available: $3477</span></div>
+                                <div className="dropdown">
+                                    <button className="dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Staking Id
+                                    </button>
+                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <li><a className="dropdown-item" href="#">Fj982645</a></li>
+
+                                    </ul>
+                                </div>
+                                <div><span>Claim</span>
+                                </div>
+                            </div>
                         </div>
-                        <button className='mobile-button'>Stack</button>
+                        <button className='mobile-button'>Connect</button>
                     </div>
                 </div>
             </div>
@@ -235,12 +251,12 @@ const Stacking = () => {
                             <p>360 Days</p>
                         </div>
                         <div className='stack-card-details'>
-                            <input
+                        <input
                                 type='text'
                                 value={inputValues[1]}
                                 onChange={handleInputChange(1)}
-                                placeholder='>= 500 & < 1000'
-                                style={inlinecss}
+                                placeholder={`>= ${500/usdPrice}`}
+                                title={`>= ${500/usdPrice}`}
                             />
                         </div>
                         <div className='stack-card-details'>
@@ -258,9 +274,26 @@ const Stacking = () => {
                         <div className="progress-bar" style={{ width: '100%' }}></div>
                     </div>
                     <div className='stack-card-3'>
-                        <h5>Rewards Start</h5>
                         <div>
-                            <span>After 100 days of stacking</span>
+                            <div className='Reward-start'>
+                                <h5>Reward Start</h5>
+                                <span>After 100 Days Of Stacking</span>
+                            </div>
+
+                            <div className='detail-card'>
+                                <div><span>Available: $3477</span></div>
+                                <div className="dropdown">
+                                    <button className="dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Staking Id
+                                    </button>
+                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <li><a className="dropdown-item" href="#">Fj982645</a></li>
+
+                                    </ul>
+                                </div>
+                                <div><span>Claim</span>
+                                </div>
+                            </div>
                         </div>
                         <button className='mobile-button'><img src={wallet} alt="" />Connect</button>
                     </div>
@@ -290,12 +323,12 @@ const Stacking = () => {
                             <p>360 Days</p>
                         </div>
                         <div className='stack-card-details'>
-                            <input
+                        <input
                                 type='text'
                                 value={inputValues[2]}
                                 onChange={handleInputChange(2)}
-                                placeholder='>= 1000'
-                                style={inlinecss}
+                                placeholder={`>= ${1000/usdPrice}`}
+                                title={`>= ${1000/usdPrice}`}
                             />
                         </div>
                         <div className='stack-card-details'>
@@ -314,9 +347,26 @@ const Stacking = () => {
                         <div className="progress-bar" style={{ width: '100%' }}></div>
                     </div>
                     <div className='stack-card-3'>
-                        <h5>Reward Start</h5>
                         <div>
-                            <span>After 100 days of stacking</span>
+                            <div className='Reward-start'>
+                                <h5>Reward Start</h5>
+                                <span>After 100 Days Of Stacking</span>
+                            </div>
+
+                            <div className='detail-card'>
+                                <div><span>Available: $3477</span></div>
+                                <div className="dropdown">
+                                    <button className="dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Staking Id
+                                    </button>
+                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <li><a className="dropdown-item" href="#">Fj982645</a></li>
+
+                                    </ul>
+                                </div>
+                                <div><span>Claim</span>
+                                </div>
+                            </div>
                         </div>
                         <button className='mobile-button'><img src={wallet} alt="" />Connect</button>
                     </div>

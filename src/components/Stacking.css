@@ -158,6 +158,47 @@ letter-spacing: 1px;
 .stack-card svg {
     width: auto;
 }
+.detail-card{
+    display: flex;
+   gap: 30px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+.detail-card div{
+    display: flex;
+    width: 192px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 24px;
+background: var(--G, linear-gradient(93deg, #FF3232 41.16%, #FFA723 97.59%));
+color: #D8D8D8;
+}
+
+#dropdownMenuButton{
+    font-size: 14px;
+    padding: 0px;
+}
+.dropdown-toggle {
+    border: none;
+}
+.detail-card div:hover{
+    box-shadow: -9px 7px 5px 0px rgba(255, 167, 35, 0.24), 1px 1px 21px 0px rgba(255, 167, 35, 0.88) inset;
+}
+.dropdown-menu.show {
+    background-color: #F24330;
+}
+.dropdown-menu.show .dropdown-item{
+    color:#D8D8D8 ;
+}
+.dropdown-menu.show .dropdown-item:hover{
+    background-color: #F24330;
+}
+.Reward-start{
+    display: flex;
+    flex-direction: column;
+}
   @media (max-width: 768px){
     .stacking{
         padding: 24px 50px;
@@ -243,6 +284,21 @@ display: none;
   .stack-card01 h5 {
     font-size: 18px;
   }
+  .stack-card02 div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .detail-card div {
+    padding: 10px;
+  }
+  .detail-card {
+    gap: 10px;
+  }
+  #dropdownMenuButton{
+    font-size: 10px;
+}
+
 }
   @media (max-width: 1356px){
     .stack-card01 {
