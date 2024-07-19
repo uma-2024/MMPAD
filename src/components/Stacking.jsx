@@ -187,7 +187,7 @@ const Stacking = () => {
                             <p>Locking Period</p>
                             <p>360 Days</p>
                         </div>
-                        <div className='stack-card-details'>
+                        <div className='stack-card-details2'>
                         <input
                                 type='text'
                                 value={inputValues[0]}
@@ -235,7 +235,7 @@ const Stacking = () => {
                                 </div>
                             </div>
                         </div>
-                        <button className='mobile-button'>Connect</button>
+                        {/* <button className='mobile-button'>Connect</button> */}
                     </div>
                 </div>
             </div>
@@ -250,7 +250,7 @@ const Stacking = () => {
                             <p>Locking Period</p>
                             <p>360 Days</p>
                         </div>
-                        <div className='stack-card-details'>
+                        <div className='stack-card-details2'>
                         <input
                                 type='text'
                                 value={inputValues[1]}
@@ -295,7 +295,7 @@ const Stacking = () => {
                                 </div>
                             </div>
                         </div>
-                        <button className='mobile-button'><img src={wallet} alt="" />Connect</button>
+                        {/* <button className='mobile-button'><img src={wallet} alt="" />Connect</button> */}
                     </div>
                 </div>
                 <div className='stack-card01 right-card'>
@@ -322,7 +322,7 @@ const Stacking = () => {
                             <p>Locking Period</p>
                             <p>360 Days</p>
                         </div>
-                        <div className='stack-card-details'>
+                        <div className='stack-card-details2'>
                         <input
                                 type='text'
                                 value={inputValues[2]}
@@ -368,7 +368,7 @@ const Stacking = () => {
                                 </div>
                             </div>
                         </div>
-                        <button className='mobile-button'><img src={wallet} alt="" />Connect</button>
+                        {/* <button className='mobile-button'><img src={wallet} alt="" />Connect</button> */}
                     </div>
                 </div>
             </div>

@@ -14,6 +14,8 @@ import NewsLetter from "./components/dashboard/NewsLetter";
 import IDO from "./components/dashboard/IDO";
 import NewsPage from "./components/dashboard/News/NewsPage";
 import Staking from "./components/Stack"; // Import Staking component
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const projectId = "c6cc849231f0c9770267752c7251f2b5";
 

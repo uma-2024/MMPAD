@@ -114,4 +114,11 @@
     .earnMore p {
         margin-bottom: 16px;
     }
+    .circle {
+        position: relative;
+        margin-top: -100px;
+    }
+    .earn-more-cards {
+        gap: 60px;
+    }
 }
